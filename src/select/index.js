@@ -21,9 +21,7 @@ const Select = (props) => {
   const ref = useRef()
   const clickRef = useRef()
 
-
   const toggling = () => setIsOpen(!isOpen)
-
 
   const onOptionClicked = value => () => {
     if(props.onSelection) {
@@ -54,7 +52,6 @@ const Select = (props) => {
             <path d="M7 10l5 5 5-5z"></path>
           </Svg>
         </DropDownHeader>
-        {isOpen && (
           <DropDownListContainer ref={clickRef} top={top} visible={isOpen} animationDuration={100}>
             <DropDownList>
               {options.map(option => (
@@ -64,7 +61,6 @@ const Select = (props) => {
               ))}
             </DropDownList>
           </DropDownListContainer>
-        )}
       </DropDownContainer>
       </>
   )
